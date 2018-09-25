@@ -8,32 +8,37 @@ import (
 )
 
 type Person struct {
-	ID        string `json:"id, omitempty"`
-	Firstname string `json:"firstname, omitempty"`
-	Lastname  string `json:"lastname, omitempty"`
+	ID        string `json:"id,omitempty"`
+	Firstname string `json:"firstname,omitempty"`
+	Lastname  string `json:"lastname,omitempty"`
 }
 
-func GetPersonEndPoint(w http.ResponseWriter, req *http.Request) {
-
+type Address struct {
+	City  string `json:"city,omitempty"`
+	State string `json:"state,omitempty"`
 }
 
-func GetPeopleEndPoint(w http.ResponseWriter, req *http.Request) {
-
-}
-
-func CreatePersonEndPoint(w http.ResponseWriter, req *http.Request) {
+func GetPersonEndpoint(w http.ResponseWriter, req *http.Request) {
 
 }
 
-func DeletePersonEndPoint(w http.ResponseWriter, req *http.Request) {
+func GetPeopleEndpoint(w http.ResponseWriter, req *http.Request) {
+
+}
+
+func CreatePersonEndpoint(w http.ResponseWriter, req *http.Request) {
+
+}
+
+func DeletePersonEndpoint(w http.ResponseWriter, req *http.Request) {
 
 }
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/people", GetPeopleEndPoint).Methods("GET")
-	router.HandleFunc("/people/{id}", GetPersonEndPoint).Methods("GET")
-	router.HandleFunc("/people/{id}", CreatePersonEndPoint).Methods("GET")
-	router.HandleFunc("/people/{id}", DeletePersonEndPoint).Methods("GET")
+	router.HandleFunc("/people", GetPeopleEndpoint).Methods("GET")
+	router.HandleFunc("/people/{id}", GetPersonEndpoint).Methods("GET")
+	router.HandleFunc("/people/{id}", CreatePersonEndpoint).Methods("GET")
+	router.HandleFunc("/people/{id}", DeletePersonEndpoint).Methods("GET")
 	log.Fatal(http.ListenAndServe(":12345", router))
 }
