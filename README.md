@@ -1,14 +1,10 @@
-# Golang-RESTful-Api
-A simple Golang RESTful  Api, using mock data. No database but more of Url Routs in building the structs
+# Golang-RESTful-API
+A simple Golang RESTful  API, using mock data.
 
 
 
-To run you need to have go installed in your system
+To run you need to have Go installed in your system
 
 Run go build
 
 you can use PostMan, Check for Localhost:12345/people
-
-
-
-
